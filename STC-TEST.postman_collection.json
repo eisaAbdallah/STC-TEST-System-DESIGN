@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "7f7b082f-7a34-4314-a982-aca9bebc425f",
+		"name": "STC-TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Space",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"type\":\"space\",\n\"name\":\"stc-assessments\",\n\"group\":\"admin\",\n\"userEmail\":\"stc2@stc.com\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/create/space",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"create",
+						"space"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Folder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"type\":\"folder\",\n\"name\":\"backend\",\n\"group\":\"admin\",\n\"userEmail\":\"stc@stc.com\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/create/folder",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"create",
+						"folder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"type\":\"file\",\n\"name\":\"assessment.pdf\",\n\"group\":\"admin\",\n\"userEmail\":\"stc@stc.com\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/create/file",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"create",
+						"file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get file details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/file/details?name=assessment.pdf&type=file&email=stc@stc.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"file",
+						"details"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "assessment.pdf"
+						},
+						{
+							"key": "type",
+							"value": "file"
+						},
+						{
+							"key": "email",
+							"value": "stc@stc.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
