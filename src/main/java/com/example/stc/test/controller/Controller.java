@@ -44,11 +44,14 @@ public ResponseEntity<?> createSpace(@RequestBody CreateRequestDTO createRequest
     }
 
     @GetMapping(VIEW_FILE_DETAILS)
-    public ResponseEntity<?> getFileDetails(@RequestBody CreateRequestDTO createRequestDTO){
-
-
+    public ResponseEntity<?> getFileDetails(@RequestParam("type")String type,@RequestParam("email")String email,@RequestParam("name")String name ){
+        CreateRequestDTO createRequestDTO=new CreateRequestDTO();
+        createRequestDTO.setName(name);
+        createRequestDTO.setUserEmail(email);
+        createRequestDTO.setType(type);
         ItemResponse item=   this.backingService.getFileDetails(createRequestDTO);
 
         return ResponseEntity.ok().body(item);
     }
+    
 }
